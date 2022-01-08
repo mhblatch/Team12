@@ -59,7 +59,6 @@ public class Map{
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
-		// Temporary implementation to make TestPacManMove work, replace when implementing for real
 		return field.get(loc);
 	}
 
