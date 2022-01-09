@@ -44,7 +44,15 @@ public class PacMan{
 	}
 
 	public boolean move() {
-		return false;
+		// Return false if we are unable to move
+		if (this.get_valid_moves().size() == 0) {
+			return false;
+		}
+
+		// Move to first available location
+		Location locationToMoveTo = this.get_valid_moves().get(0);
+		this.myLoc = locationToMoveTo;
+		return true;
 	}
 
 	public boolean is_ghost_in_range() { 
