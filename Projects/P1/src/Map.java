@@ -63,7 +63,21 @@ public class Map{
 	}
 
 	public boolean attack(String Name) {
-		//update gameOver
+		// Ghost's position
+		int ghostX = locations.get(Name).x;
+		int ghostY = locations.get(Name).y;
+
+		// PacMan's position
+		int pacmanX = locations.get("pacman").x;
+		int pacmanY = locations.get("pacman").y;
+
+		// Check if squared distance is less than or equal to 1 (attack range)
+		if((pacmanX - ghostX)*(pacmanX-ghostX)+(pacmanY-ghostY)*(pacmanY-ghostY) <= 1) {
+			// update gameOver
+			gameOver = true;
+			return true;
+		}
+
 		return false;
 	}
 	
