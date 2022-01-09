@@ -9,7 +9,7 @@ public class TestPacManValidMoves extends TestCase {
 		// Creates A New Map With Walls and Tokens Initialized
 		MainFrame frame = new MainFrame();
 
-		// Creates a red ghost named "name" at location x,y
+		// Creates a PacMan at location 1,1
 		PacMan pacman = frame.addPacMan(new Location(1, 1));
 		
 		// Created expected result
