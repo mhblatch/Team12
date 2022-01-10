@@ -5,7 +5,7 @@
 
 ## PacMan Image
 
-![alt text](https://github.com/cmsc388T-winter22/Team12/blob/main/pacman.jpg?raw=true)
+![alt text](https://github.com/cmsc388T-winter22/Team12/blob/main/Projects/P1/pacman.jpg?raw=true)
 
 ## Running the code
 
