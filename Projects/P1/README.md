@@ -1,6 +1,6 @@
-# PacMan
+# PacMan Project
 <hr>
-**Group Members:**  Jose Sanchez Alarcon, Hugo Burbelo, Tim Seidell, Ali Taheri
+- **Group Members:**  Jose Sanchez Alarcon, Hugo Burbelo, Tim Seidell, Ali Taheri
 
 ## PacMan Image
 <hr>
