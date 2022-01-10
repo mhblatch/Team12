@@ -1,11 +1,8 @@
 # PacMan Project
 
-
 **Group Members:** Jose Sanchez Alarcon, Hugo Burbelo, Tim Seidell, Ali Taheri
 
-## PacMan Image
-
-![alt text](https://github.com/cmsc388T-winter22/Team12/blob/main/Projects/P1/pacman.jpg?raw=true)
+<img src="https://github.com/cmsc388T-winter22/Team12/blob/main/Projects/P1/pacman.jpg?raw=true" alt="PacMan Image" width="200"></img>
 
 ## Running the code
 
