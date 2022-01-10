@@ -16,8 +16,8 @@ java -cp "src/" StartMenu
 
 ### get_valid_moves()
 
-- **Implementation:** a description of the implementation for each function
-- **Test:** a description of the test you wrote
+- **Implementation:** Returns the set of valid moves that pacman can make given the current location on the map.
+- **Test:** After placing PacMan at position (1,1) on the map, ensure that the only two possible moves are to (1,2) and (2,1)
 
 ### move()
 
@@ -34,14 +34,12 @@ java -cp "src/" StartMenu
 - **Implementation:** a description of the implementation for each function
 - **Test:** a description of the test you wrote
 
-
 ## Ghost Class
-
 
 ### get_valid_moves()
 
-- **Implementation:** a description of the implementation for each function
-- **Test:** a description of the test you wrote
+- **Implementation:** Returns the set of valid moves that a ghost can make given the current location on the map.
+- **Test:** After placing PacMan at position (1,1) on the map, ensure that the only two possible moves are to (1,2) and (2,1)
 
 ### move()
 
@@ -60,7 +58,6 @@ java -cp "src/" StartMenu
 
 ## Map Class
 
-
 ### move()
 
 - **Implementation:** a description of the implementation for each function
@@ -73,8 +70,8 @@ java -cp "src/" StartMenu
 
 ### attack()
 
-- **Implementation:** a description of the implementation for each function
-- **Test:** a description of the test you wrote
+- **Implementation:** If the squared distance between the specified ghost and pacman is less than or equal to one, then attack
+- **Test:** After placing a ghost at (1,1) and pacman at (2,1), ensure that map.attack() returns true.
 
 ### eatCookie()
 
