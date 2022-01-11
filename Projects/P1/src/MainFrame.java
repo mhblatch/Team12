@@ -159,6 +159,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		myFrame.getContentPane().setBackground(Color.BLACK);
 		myFrame.setTitle("PACMAN");
 		
+		
 	}
 
 	@Override

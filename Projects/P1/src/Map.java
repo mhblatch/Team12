@@ -2,6 +2,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import javax.swing.JComponent;
 
+
 public class Map{
 
 	public enum Type {
@@ -42,6 +43,10 @@ public class Map{
 		components.put(name, comp);
 		if (!field.containsKey(loc)) field.put(loc, new HashSet<Type>());
 		field.get(loc).add(type);
+		if (type == Map.Type.PACMAN) {
+			System.out.println(components.get("pacman"));
+		}
+		
 	}
 
 	public int getCookies() {
@@ -53,13 +58,26 @@ public class Map{
 	}
 		
 	public boolean move(String name, Location loc, Type type) {
-		//update locations, components, and field
-		//use the setLocation method for the component to move it to the new location
-		return false;
+		Location oldLoc = locations.get(name);
+		HashSet<Type> priorFieldSet = field.get(locations.get(name));
+		locations.remove(name);
+		locations.put(name, loc);
+		priorFieldSet.remove(type);
+		field.put(oldLoc, priorFieldSet);
+		if (!field.containsKey(loc)) field.put(loc, new HashSet<Type>());
+		field.get(loc).add(type);
+		components.get(name).setLocation(loc.x, loc.y);
+		return true;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
-		return field.get(loc);
+		if (field.containsKey(loc)) {
+			return field.get(loc);
+		}
+		HashSet<Type> priorFieldSet = new HashSet<Type>();
+		priorFieldSet.add((Map.Type.WALL));
+		return priorFieldSet;
+		
 	}
 
 	public boolean attack(String Name) {
@@ -84,6 +102,18 @@ public class Map{
 	public JComponent eatCookie(String name) {
 		//update locations, components, field, and cookies
 		//the id for a cookie at (10, 1) is tok_x10_y1
-		return null;
+		String[] array = name.replace("x","").replace("y","").split("_");
+		int x = Integer.parseInt(array[1]);
+		int y = Integer.parseInt(array[2]);
+		locations.remove(name);
+		JComponent j = components.remove(name);
+		Location loc = new Location(x, y);
+		HashSet<Type> priorFieldSet = field.get(loc);
+		priorFieldSet.remove(Type.COOKIE);
+		field.remove(loc);
+		field.put(loc, priorFieldSet);
+		cookies++;
+		return j;
+
 	}
 }

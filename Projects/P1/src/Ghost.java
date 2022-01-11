@@ -42,7 +42,16 @@ public class Ghost{
 	}
 
 	public boolean move() {
-		return false;
+		// Return false if we are unable to move
+		if (this.get_valid_moves().size() == 0) {
+			return false;
+		}
+
+		// Move to first available location
+		Location locationToMoveTo = this.get_valid_moves().get(0);
+		this.myLoc = locationToMoveTo;
+		myMap.move(this.myName, locationToMoveTo, Map.Type.GHOST);
+		return true;
 	}
 
 	public boolean is_pacman_in_range() { 
@@ -76,6 +85,10 @@ public class Ghost{
 	}
 
 	public boolean attack() {
+		if (is_pacman_in_range()) {
+			myMap.attack(this.myName);
+			return true;
+		}
 		return false;
 	}
 }
