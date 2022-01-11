@@ -11,6 +11,8 @@ In the P1 directory, run the following commands
 javac -cp "src/" src/*.java
 java -cp "src/" StartMenu
 ```
+## The game
+![Screen Shot 2022-01-10 at 10 07 03 PM](https://user-images.githubusercontent.com/30019505/148874489-acb5fc3b-6765-4b39-89a3-b974b09ae1ba.png)
 
 ## PacMan Class
 
