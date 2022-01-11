@@ -20,22 +20,22 @@ public class PacMan{
 
 		ArrayList<Location> locations = new ArrayList<Location>();
 
-		// Check move up
+		// Check move up.
 		if(!myMap.getLoc(new Location(x, y + 1)).contains(Map.Type.WALL)) {
 			locations.add(new Location(x, y + 1));
 		}
 
-		// Check move down
+		// Check move down.
 		if(!myMap.getLoc(new Location(x, y - 1)).contains(Map.Type.WALL)) {
 			locations.add(new Location(x, y - 1));
 		}
 
-		// Check move left
+		// Check move left.
 		if(!myMap.getLoc(new Location(x - 1, y)).contains(Map.Type.WALL)) {
 			locations.add(new Location(x - 1, y));
 		}
 
-		// Check move right
+		// Check move right.
 		if(!myMap.getLoc(new Location(x + 1, y)).contains(Map.Type.WALL)) {
 			locations.add(new Location(x + 1, y));
 		}
@@ -44,7 +44,15 @@ public class PacMan{
 	}
 
 	public boolean move() {
-		return false;
+		// Return false if we are unable to move
+		if (this.get_valid_moves().size() == 0) {
+			return false;
+		}
+
+		// Move to first available location
+		Location locationToMoveTo = this.get_valid_moves().get(0);
+		this.myLoc = locationToMoveTo;
+		return true;
 	}
 
 	public boolean is_ghost_in_range() { 
