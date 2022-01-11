@@ -21,8 +21,8 @@ java -cp "src/" StartMenu
 
 ### move()
 
-- **Implementation:** a description of the implementation for each function
-- **Test:** a description of the test you wrote
+- **Implementation:**  This method uses the get_valid_moves method to find the possible locations that PacMan can move, given his current location. The method then chooses to move in one of those directions.
+- **Test:** Tests that when called, the method returns true when we have successfully moved and that the pacman's new location is a valid position to move to.
 
 ### is_ghost_in_range()
 
@@ -48,8 +48,8 @@ java -cp "src/" StartMenu
 
 ### is_pacman_in_range()
 
-- **Implementation:** a description of the implementation for each function
-- **Test:** a description of the test you wrote
+- **Implementation:** This function checks its surroundings to see if PacMan is in attack range, and returns true if the pacman is within the range. Otherwise, the method returns false.
+- **Test:** There are two tests for this, and each checks if the method returns true/false in the correct scenario.
 
 ### attack()
 
@@ -60,13 +60,13 @@ java -cp "src/" StartMenu
 
 ### move()
 
-- **Implementation:** a description of the implementation for each function
-- **Test:** a description of the test you wrote
+- **Implementation:** 
+- **Test:** 
 
 ### getLoc()
 
-- **Implementation:** a description of the implementation for each function
-- **Test:** a description of the test you wrote
+- **Implementation:** For the given location argument, returns what is currently at the location (Empty, Pacman, Cookie, Ghost, Wall).
+- **Test:** Tests two different scenarios - one where a ghost is at the location, and one where the pacaman is at the location.
 
 ### attack()
 
