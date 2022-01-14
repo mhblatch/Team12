@@ -28,4 +28,5 @@ jobs:
         distribution: 'adopt'
         java-version: '11'
         check-latest: true
-    - run: java -cp "P1/src/" P1/src/*.java
+    working-directory: ./P1
+    - run: java -cp "src/" src/*.java
