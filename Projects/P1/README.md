@@ -30,7 +30,7 @@ java -cp "src/" StartMenu
 
 - **Implementation:** a description of the implementation for each function
 - **Test:** a description of the test you wrote
-
+ 
 ### consume()
 
 - **Implementation:** a description of the implementation for each function
