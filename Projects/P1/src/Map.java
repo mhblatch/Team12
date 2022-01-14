@@ -90,7 +90,7 @@ public class Map{
 		int pacmanY = locations.get("pacman").y;
 
 		// Check if squared distance is less than or equal to 1 (attack range)
-		if((pacmanX - ghostX)*(pacmanX-ghostX)+(pacmanY-ghostY)*(pacmanY-ghostY) <= 1) {
+		if((pacmanX - ghostX)*(pacmanX-ghostX)+(pacmanY-ghostY)*(pacmanY-ghostY) <= 0) {
 			// update gameOver
 			gameOver = true;
 			return true;
