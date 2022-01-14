@@ -79,7 +79,7 @@ jobs:
         java-version: '11'
         check-latest: true
     
-    - run: javac -cp "src/" src/*.java; javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java; java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore testGhostMove  
+    - run: javac -cp "src/" src/*.java; javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java; java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove  
   testGhostValidMoves:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -95,7 +95,7 @@ jobs:
         java-version: '11'
         check-latest: true
     
-    - run: javac -cp "src/" src/*.java; javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java; java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore testGhostValidMoves  
+    - run: javac -cp "src/" src/*.java; javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java; java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves  
   TestMapAttack:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
