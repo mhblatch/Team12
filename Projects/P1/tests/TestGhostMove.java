@@ -1,15 +1,16 @@
 import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
+import java.util.ArrayList;
 
 public class TestGhostMove extends TestCase {
 
 	public void testGhostMove() throws FileNotFoundException{
 		//Creating A Map
-		MainFrame frame = new MainFrame(); //Creates A New Map With Walls and Tokens Initialized
+		NoFrame frame = new NoFrame(); //Creates A New Map With Walls and Tokens Initialized
 
 		//Creating Players
-		Ghost g = frame.addGhost(new Location(1, 1));
+		Ghost g = frame.addGhost(new Location(1, 1), "blinky", Color.CYAN);
 
 		//Start The Game
 		frame.startGame();

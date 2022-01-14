@@ -1,11 +1,12 @@
 import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
+import java.util.HashSet;
 
-public class TestMapMove {
+public class TestMapMove extends TestCase {
 
-	public void testMapMove() {
-		MainFrame frame = new MainFrame(); //Creates A New Map With Walls and Tokens Initialized
+	public void testMapMove() throws FileNotFoundException {
+		NoFrame frame = new NoFrame(); //Creates A New Map With Walls and Tokens Initialized
 
 		//Creating Players
 		PacMan pacman = frame.addPacMan(new Location(1, 2)); //Creates PacMan at location x, y
@@ -22,7 +23,7 @@ public class TestMapMove {
 		h.add(Map.Type.PACMAN);
 		h.add(Map.Type.COOKIE);
 
-		assertEquals(frame.getMap().getLoc(), h); // check we return true for a valid move
+		assertEquals(frame.getMap().getLoc(new Location(1, 1)), h); // check we return true for a valid move
 
 	}
 }

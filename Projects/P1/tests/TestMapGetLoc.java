@@ -8,7 +8,7 @@ public class TestMapGetLoc extends TestCase {
 	
 	public void testMapGetLocPacman() throws FileNotFoundException {
 		//Creating A Map
-		MainFrame frame = new MainFrame(); //Creates A New Map With Walls and Tokens Initialized
+		NoFrame frame = new NoFrame(); //Creates A New Map With Walls and Tokens Initialized
 
 		//Creating Players
 		PacMan pacman = frame.addPacMan(new Location(1, 1)); //Creates PacMan at location x, y
@@ -30,7 +30,7 @@ public class TestMapGetLoc extends TestCase {
 
 	public void testMapGetLocGhost() throws FileNotFoundException {
 		//Creating A Map
-		MainFrame frame = new MainFrame(); //Creates A New Map With Walls and Tokens Initialized
+		NoFrame frame = new NoFrame(); //Creates A New Map With Walls and Tokens Initialized
 
 		//Creating Players
 		PacMan pacman = frame.addPacMan(new Location(1, 1)); //Creates PacMan at location x, y

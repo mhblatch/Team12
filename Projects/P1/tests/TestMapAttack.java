@@ -6,7 +6,7 @@ public class TestMapAttack extends TestCase {
 
 	public void testMapAttack() throws FileNotFoundException{
 		// Creates A New Map With Walls and Tokens Initialized
-		MainFrame frame = new MainFrame();
+		NoFrame frame = new NoFrame();
 
 		// Creates a red ghost named "name" at location x,y
 		Ghost ghost = frame.addGhost(new Location(1, 1), "name", Color.red); 
