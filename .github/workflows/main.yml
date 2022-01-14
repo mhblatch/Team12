@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  TestAttack:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     defaults:
@@ -31,4 +31,20 @@ jobs:
         java-version: '11'
         check-latest: true
     
-    - run: javac -cp "src/" src/*.java; javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java; java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack 
+    - run: javac -cp "src/" src/*.java; javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java; java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack
+  TestConsume:
+  # The type of runner that the job will run on
+  runs-on: ubuntu-latest
+  defaults:
+    run:
+      working-directory: ./Projects/P1
+  # Steps represent a sequence of tasks that will be executed as part of the job
+  steps:
+  - uses: actions/checkout@v2
+  - uses: actions/setup-java@v2
+    with:
+      distribution: 'adopt'
+      java-version: '11'
+      check-latest: true
+  
+  - run: javac -cp "src/" src/*.java; javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java; java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestConsume  
