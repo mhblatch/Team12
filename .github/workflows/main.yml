@@ -31,4 +31,4 @@ jobs:
         java-version: '11'
         check-latest: true
     
-    - run: java -cp "src/" src/*.java
+    - run: javac -cp "src/" src/*.java
