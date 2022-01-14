@@ -32,3 +32,5 @@ jobs:
         check-latest: true
     
     - run: javac -cp "src/" src/*.java
+    - run: javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+    - run: java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostInRange
