@@ -43,7 +43,7 @@ public class Ghost{
 
 	public boolean move() {
 		// Return false if we are unable to move
-		if (this.get_valid_moves().size() == 0) {
+		if (this.get_valid_moves().size() != 0) {
 			return false;
 		}
 

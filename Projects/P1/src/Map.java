@@ -109,7 +109,6 @@ public class Map{
 		priorFieldSet.remove(Type.COOKIE);
 		field.remove(loc);
 		field.put(loc, priorFieldSet);
-		cookies++;
 		return j;
 
 	}
