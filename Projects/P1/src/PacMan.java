@@ -22,22 +22,22 @@ public class PacMan{
 
 		// Check move up.
 		if(!myMap.getLoc(new Location(x, y + 1)).contains(Map.Type.WALL)) {
-			locations.add(new Location(x, y + 1));
+			locations.add(new Location(x, y));
 		}
 
 		// Check move down.
 		if(!myMap.getLoc(new Location(x, y - 1)).contains(Map.Type.WALL)) {
-			locations.add(new Location(x, y - 1));
+			locations.add(new Location(x, y));
 		}
 
 		// Check move left.
 		if(!myMap.getLoc(new Location(x - 1, y)).contains(Map.Type.WALL)) {
-			locations.add(new Location(x - 1, y));
+			locations.add(new Location(x, y));
 		}
 
 		// Check move right.
 		if(!myMap.getLoc(new Location(x + 1, y)).contains(Map.Type.WALL)) {
-			locations.add(new Location(x + 1, y));
+			locations.add(new Location(x, y));
 		}
 
 		return locations;	
@@ -47,7 +47,7 @@ public class PacMan{
 		// System.out.println("Moved to: " + this.myLoc.x + ", " + this.myLoc.y);
 		// System.out.println(this.get_valid_moves());
 		// Return false if we are unable to move
-		if (this.get_valid_moves().size() == 0) {
+		if (this.get_valid_moves().size() != 0) {
 			return false;
 		}
 
@@ -67,19 +67,19 @@ public class PacMan{
 		Boolean in_range = false;
 
 
-		if(myMap.getLoc(new Location(x, y + 1)).contains(Map.Type.GHOST)) {
+		if(myMap.getLoc(new Location(x, y)).contains(Map.Type.GHOST)) {
 			in_range = true;
 		}
 
-		if(myMap.getLoc(new Location(x, y - 1)).contains(Map.Type.GHOST)) {
+		if(myMap.getLoc(new Location(x, y)).contains(Map.Type.GHOST)) {
 			in_range = true;
 		}
 
-		if(myMap.getLoc(new Location(x - 1, y)).contains(Map.Type.GHOST)) {
+		if(myMap.getLoc(new Location(x, y)).contains(Map.Type.GHOST)) {
 			in_range = true;
 		}
 
-		if(myMap.getLoc(new Location(x + 1, y)).contains(Map.Type.GHOST)) {
+		if(myMap.getLoc(new Location(x, y)).contains(Map.Type.GHOST)) {
 			in_range = true;
 		}
 
@@ -89,7 +89,7 @@ public class PacMan{
 	public JComponent consume() { 
 		int x = myLoc.x;
 		int y = myLoc.y;
- 		if (myMap.getLoc(new Location(x, y)).contains(Map.Type.COOKIE)) {
+ 		if (!myMap.getLoc(new Location(x, y)).contains(Map.Type.COOKIE)) {
 			return myMap.eatCookie("tok_x" + String.valueOf(x) + "_y" + String.valueOf(y));
 		 }
 		return null;

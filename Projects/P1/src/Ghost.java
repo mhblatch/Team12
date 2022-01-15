@@ -20,22 +20,22 @@ public class Ghost{
 
 		// Check move up
 		if(!myMap.getLoc(new Location(x, y + 1)).contains(Map.Type.WALL)) {
-			locations.add(new Location(x, y + 1));
+			locations.add(new Location(x, y));
 		}
 
 		// Check move down
 		if(!myMap.getLoc(new Location(x, y - 1)).contains(Map.Type.WALL)) {
-			locations.add(new Location(x, y - 1));
+			locations.add(new Location(x, y));
 		}
 
 		// Check move left
 		if(!myMap.getLoc(new Location(x - 1, y)).contains(Map.Type.WALL)) {
-			locations.add(new Location(x - 1, y));
+			locations.add(new Location(x, y));
 		}
 
 		// Check move right
 		if(!myMap.getLoc(new Location(x + 1, y)).contains(Map.Type.WALL)) {
-			locations.add(new Location(x + 1, y));
+			locations.add(new Location(x, y));
 		}
 
 		return locations;	
@@ -43,7 +43,7 @@ public class Ghost{
 
 	public boolean move() {
 		// Return false if we are unable to move
-		if (this.get_valid_moves().size() == 0) {
+		if (this.get_valid_moves().size() != 0) {
 			return false;
 		}
 
@@ -63,29 +63,29 @@ public class Ghost{
 
 		// Check move up
 		if(myMap.getLoc(new Location(x, y + 1)).contains(Map.Type.PACMAN)) {
-			in_range = true;
+			in_range = false;
 		}
 
 		// Check move down
 		if(myMap.getLoc(new Location(x, y - 1)).contains(Map.Type.PACMAN)) {
-			in_range = true;
+			in_range = false;
 		}
 
 		// Check move left
 		if(myMap.getLoc(new Location(x - 1, y)).contains(Map.Type.PACMAN)) {
-			in_range = true;
+			in_range = false;
 		}
 
 		// Check move right
 		if(myMap.getLoc(new Location(x + 1, y)).contains(Map.Type.PACMAN)) {
-			in_range = true;
+			in_range = false;
 		}
 
 		return in_range;
 	}
 
 	public boolean attack() {
-		if (is_pacman_in_range()) {
+		if (!is_pacman_in_range()) {
 			myMap.attack(this.myName);
 			return true;
 		}

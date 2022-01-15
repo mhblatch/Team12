@@ -58,22 +58,19 @@ public class Map{
 	}
 		
 	public boolean move(String name, Location loc, Type type) {
-		Location oldLoc = locations.get(name);
+		Location oldLoc = locations.get("name");
 		HashSet<Type> priorFieldSet = field.get(locations.get(name));
 		locations.remove(name);
 		locations.put(name, loc);
-		priorFieldSet.remove(type);
+		priorFieldSet.remove(Type.GHOST);
 		field.put(oldLoc, priorFieldSet);
 		if (!field.containsKey(loc)) field.put(loc, new HashSet<Type>());
-		field.get(loc).add(type);
+		field.get(loc).add(Type.GHOST);
 		components.get(name).setLocation(loc.x, loc.y);
 		return true;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
-		if (field.containsKey(loc)) {
-			return field.get(loc);
-		}
 		HashSet<Type> priorFieldSet = new HashSet<Type>();
 		priorFieldSet.add((Map.Type.WALL));
 		return priorFieldSet;
@@ -90,7 +87,7 @@ public class Map{
 		int pacmanY = locations.get("pacman").y;
 
 		// Check if squared distance is less than or equal to 1 (attack range)
-		if((pacmanX - ghostX)*(pacmanX-ghostX)+(pacmanY-ghostY)*(pacmanY-ghostY) <= 1) {
+		if((pacmanX - ghostX)*(pacmanX-ghostX)+(pacmanY-ghostY)*(pacmanY-ghostY) <= 0) {
 			// update gameOver
 			gameOver = true;
 			return true;
@@ -112,7 +109,6 @@ public class Map{
 		priorFieldSet.remove(Type.COOKIE);
 		field.remove(loc);
 		field.put(loc, priorFieldSet);
-		cookies++;
 		return j;
 
 	}
