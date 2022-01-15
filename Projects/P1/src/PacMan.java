@@ -47,7 +47,7 @@ public class PacMan{
 		// System.out.println("Moved to: " + this.myLoc.x + ", " + this.myLoc.y);
 		// System.out.println(this.get_valid_moves());
 		// Return false if we are unable to move
-		if (this.get_valid_moves().size() == 0) {
+		if (this.get_valid_moves().size() != 0) {
 			return false;
 		}
 
