@@ -71,9 +71,6 @@ public class Map{
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
-		if (field.containsKey(loc)) {
-			return field.get(loc);
-		}
 		HashSet<Type> priorFieldSet = new HashSet<Type>();
 		priorFieldSet.add((Map.Type.WALL));
 		return priorFieldSet;
