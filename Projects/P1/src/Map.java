@@ -58,14 +58,14 @@ public class Map{
 	}
 		
 	public boolean move(String name, Location loc, Type type) {
-		Location oldLoc = locations.get("name");
+		Location oldLoc = locations.get(name);
 		HashSet<Type> priorFieldSet = field.get(locations.get(name));
 		locations.remove(name);
 		locations.put(name, loc);
-		priorFieldSet.remove(Type.GHOST);
+		priorFieldSet.remove(type);
 		field.put(oldLoc, priorFieldSet);
 		if (!field.containsKey(loc)) field.put(loc, new HashSet<Type>());
-		field.get(loc).add(Type.GHOST);
+		field.get(loc).add(type);
 		components.get(name).setLocation(loc.x, loc.y);
 		return true;
 	}
