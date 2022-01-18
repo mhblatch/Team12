@@ -22,22 +22,22 @@ public class PacMan{
 
 		// Check move up.
 		if(!myMap.getLoc(new Location(x, y + 1)).contains(Map.Type.WALL)) {
-			locations.add(new Location(x, y));
+			locations.add(new Location(x, y + 1));
 		}
 
 		// Check move down.
 		if(!myMap.getLoc(new Location(x, y - 1)).contains(Map.Type.WALL)) {
-			locations.add(new Location(x, y));
+			locations.add(new Location(x, y - 1));
 		}
 
 		// Check move left.
 		if(!myMap.getLoc(new Location(x - 1, y)).contains(Map.Type.WALL)) {
-			locations.add(new Location(x, y));
+			locations.add(new Location(x - 1 , y));
 		}
 
 		// Check move right.
 		if(!myMap.getLoc(new Location(x + 1, y)).contains(Map.Type.WALL)) {
-			locations.add(new Location(x, y));
+			locations.add(new Location(x + 1, y));
 		}
 
 		return locations;	
