@@ -70,9 +70,11 @@ public class Map {
 	}
 
 	public HashSet<Type> getLoc(Location loc) {
-		HashSet<Type> priorFieldSet = new HashSet<Type>();
-		priorFieldSet.add((Map.Type.WALL));
-		return priorFieldSet;
+		if (locations.containsValue(loc)) {
+                        return field.get(loc);
+                } else {
+                        return wallSet;
+                }
 	}
 
 	public boolean attack(String Name) {
@@ -85,7 +87,6 @@ public class Map {
 		int pacmanY = locations.get("pacman").y;
 
 		// Check if squared distance is less than or equal to 1 (attack range)
-
 		if((pacmanX - ghostX)*(pacmanX-ghostX)+(pacmanY-ghostY)*(pacmanY-ghostY) <= 1) {
 			// update gameOver
 			gameOver = true;

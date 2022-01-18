@@ -63,20 +63,19 @@ public class PacMan {
 		int y = myLoc.y;
 
 		Boolean in_range = false;
-
-		if (myMap.getLoc(new Location(x, y)).contains(Map.Type.GHOST)) {
+		if(myMap.getLoc(new Location(x, y + 1)).contains(Map.Type.GHOST)) {
 			in_range = true;
 		}
 
-		if (myMap.getLoc(new Location(x, y)).contains(Map.Type.GHOST)) {
+		if(myMap.getLoc(new Location(x, y - 1)).contains(Map.Type.GHOST)) {
 			in_range = true;
 		}
 
-		if (myMap.getLoc(new Location(x, y)).contains(Map.Type.GHOST)) {
+		if(myMap.getLoc(new Location(x - 1, y)).contains(Map.Type.GHOST)) {
 			in_range = true;
 		}
 
-		if (myMap.getLoc(new Location(x, y)).contains(Map.Type.GHOST)) {
+		if(myMap.getLoc(new Location(x + 1, y)).contains(Map.Type.GHOST)) {
 			in_range = true;
 		}
 
@@ -87,6 +86,7 @@ public class PacMan {
 		int x = myLoc.x;
 		int y = myLoc.y;
  		if (myMap.getLoc(new Location(x, y)).contains(Map.Type.COOKIE)) {
+
 			return myMap.eatCookie("tok_x" + String.valueOf(x) + "_y" + String.valueOf(y));
 		}
 		return null;
