@@ -1,7 +1,7 @@
 import java.util.HashSet;
 import java.util.ArrayList;
 
-public class Ghost{
+public class Ghost {
 	String myName;
 	Location myLoc;
 	Map myMap;
@@ -20,30 +20,30 @@ public class Ghost{
 
 		// Check move up
 		if(!myMap.getLoc(new Location(x, y + 1)).contains(Map.Type.WALL)) {
-			locations.add(new Location(x, y));
+			locations.add(new Location(x, y + 1));
 		}
 
 		// Check move down
 		if(!myMap.getLoc(new Location(x, y - 1)).contains(Map.Type.WALL)) {
-			locations.add(new Location(x, y));
+			locations.add(new Location(x, y - 1));
 		}
 
 		// Check move left
 		if(!myMap.getLoc(new Location(x - 1, y)).contains(Map.Type.WALL)) {
-			locations.add(new Location(x, y));
+			locations.add(new Location(x - 1, y));
 		}
 
 		// Check move right
 		if(!myMap.getLoc(new Location(x + 1, y)).contains(Map.Type.WALL)) {
-			locations.add(new Location(x, y));
+			locations.add(new Location(x + 1, y));
 		}
 
-		return locations;	
+		return locations;
 	}
 
 	public boolean move() {
 		// Return false if we are unable to move
-		if (this.get_valid_moves().size() != 0) {
+		if (this.get_valid_moves().size() == 0) {
 			return false;
 		}
 
@@ -54,31 +54,28 @@ public class Ghost{
 		return true;
 	}
 
-	public boolean is_pacman_in_range() { 
+	public boolean is_pacman_in_range() {
 		int x = myLoc.x;
 		int y = myLoc.y;
 
 		Boolean in_range = false;
-
-
-		// Check move up
-		if(myMap.getLoc(new Location(x, y + 1)).contains(Map.Type.PACMAN)) {
-			in_range = true;
+		if (myMap.getLoc(new Location(x, y + 1)).contains(Map.Type.PACMAN)) {
+			in_range = false;
 		}
 
 		// Check move down
-		if(myMap.getLoc(new Location(x, y - 1)).contains(Map.Type.PACMAN)) {
-			in_range = true;
+		if (myMap.getLoc(new Location(x, y - 1)).contains(Map.Type.PACMAN)) {
+			in_range = false;
 		}
 
 		// Check move left
-		if(myMap.getLoc(new Location(x - 1, y)).contains(Map.Type.PACMAN)) {
-			in_range = true;
+		if (myMap.getLoc(new Location(x - 1, y)).contains(Map.Type.PACMAN)) {
+			in_range = false;
 		}
 
 		// Check move right
-		if(myMap.getLoc(new Location(x + 1, y)).contains(Map.Type.PACMAN)) {
-			in_range = true;
+		if (myMap.getLoc(new Location(x + 1, y)).contains(Map.Type.PACMAN)) {
+			in_range = false;
 		}
 
 		return in_range;
