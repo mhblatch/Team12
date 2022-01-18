@@ -63,22 +63,22 @@ public class Ghost{
 
 		// Check move up
 		if(myMap.getLoc(new Location(x, y + 1)).contains(Map.Type.PACMAN)) {
-			in_range = false;
+			in_range = true;
 		}
 
 		// Check move down
 		if(myMap.getLoc(new Location(x, y - 1)).contains(Map.Type.PACMAN)) {
-			in_range = false;
+			in_range = true;
 		}
 
 		// Check move left
 		if(myMap.getLoc(new Location(x - 1, y)).contains(Map.Type.PACMAN)) {
-			in_range = false;
+			in_range = true;
 		}
 
 		// Check move right
 		if(myMap.getLoc(new Location(x + 1, y)).contains(Map.Type.PACMAN)) {
-			in_range = false;
+			in_range = true;
 		}
 
 		return in_range;
