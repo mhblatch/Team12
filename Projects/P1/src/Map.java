@@ -97,18 +97,18 @@ public class Map{
 	}
 	
 	public JComponent eatCookie(String name) {
-		//update locations, components, field, and cookies
-		//the id for a cookie at (10, 1) is tok_x10_y1
-		String[] array = name.replace("x","").replace("y","").split("_");
+		// update locations, components, field, and cookies
+		// the id for a cookie at (10, 1) is tok_x10_y1
+		String[] array = name.replace("x", "").replace("y", "").split("_");
 		int x = Integer.parseInt(array[1]);
 		int y = Integer.parseInt(array[2]);
-		locations.remove(name);
-		JComponent j = components.remove(name);
+
 		Location loc = new Location(x, y);
-		HashSet<Type> priorFieldSet = field.get(loc);
-		priorFieldSet.remove(Type.COOKIE);
-		field.remove(loc);
-		field.put(loc, priorFieldSet);
+		JComponent j = components.remove("tok_x" + x + "_y" + y);
+		HashSet<Type> set = field.get(loc);
+		set.remove(Type.COOKIE);
+		field.replace(loc, set);
+		cookies++;
 		return j;
 
 	}
