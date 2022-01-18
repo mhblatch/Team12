@@ -70,10 +70,11 @@ public class Map {
 	}
 
 	public HashSet<Type> getLoc(Location loc) {
-		HashSet<Type> priorFieldSet = new HashSet<Type>();
-		priorFieldSet.add((Map.Type.WALL));
-		return priorFieldSet;
-
+		if (locations.containsValue(loc)) {
+                        return field.get(loc);
+                } else {
+                        return wallSet;
+                }
 	}
 
 	public boolean attack(String Name) {
